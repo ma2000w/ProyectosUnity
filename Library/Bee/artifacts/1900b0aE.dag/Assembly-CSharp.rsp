@@ -432,6 +432,7 @@
 "Assets/Scripts/Model/SpeakerData.cs"
 "Assets/Scripts/Model/Turn.cs"
 "Assets/Scripts/PreProduction/BoardCreator.cs"
+"Assets/Scripts/UI/ChangeScene.cs"
 "Assets/Scripts/View Model Component/Ability/Ability.cs"
 "Assets/Scripts/View Model Component/Ability/AbilityCatalog.cs"
 "Assets/Scripts/View Model Component/Ability/AbilityMagicCost.cs"
