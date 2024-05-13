@@ -5,6 +5,39 @@ using System.Collections.Generic;
 public class DamageAbilityEffect : BaseAbilityEffect 
 {
 	#region Public
+
+	public GameObject damagePrefab;
+	public AudioSource effectsAudioSource;
+    public AudioClip hitSound;
+    public AudioClip missSound;
+    private AudioSource audioSource;
+
+    void Awake() 
+    {
+        // Get the AudioSource component attached to the same GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) 
+        {
+            // Log an error if no AudioSource is found
+            Debug.LogError("No AudioSource component found on " + gameObject.name);
+        }
+    }
+
+	
+    
+    private void DisplayDamage(int damage, Transform unitTransform)
+    {
+        // Ensure damagePrefab is assigned
+        if (damagePrefab == null)
+        {
+            Debug.LogError("DamagePrefab is not assigned on " + gameObject.name);
+            return;
+        }
+        
+        GameObject damageText = Instantiate(damagePrefab, unitTransform.position, Quaternion.identity, unitTransform);
+        damageText.GetComponent<DamageTextScript>().DisplayDamage(damage);
+    }
+
 	public override int Predict (Tile target)
 	{
 		Unit attacker = GetComponentInParent<Unit>();
@@ -54,7 +87,32 @@ public class DamageAbilityEffect : BaseAbilityEffect
 		// Apply the damage to the target
 		Stats s = defender.GetComponent<Stats>();
 		s[StatTypes.HP] += value;
+
+	DisplayDamage(value, defender.transform);
+
+         if (value > 0)
+        {
+            StartCoroutine(PlaySound(hitSound));
+        }
+        else
+        {
+            StartCoroutine(PlaySound(missSound));
+        }
+
+		
+
 		return value;
 	}
+
+	 private IEnumerator PlaySound(AudioClip clip)
+    {
+        if (effectsAudioSource != null && clip != null)
+        {
+            effectsAudioSource.PlayOneShot(clip);
+            yield return new WaitForSeconds(1.0f);  // Wait for 1 second
+            effectsAudioSource.Stop();  // Stop the AudioSource
+        }
+    }
+
 	#endregion
 }

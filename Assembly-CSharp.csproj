@@ -109,6 +109,7 @@
      <Compile Include="Assets\Scripts\Common\Animation\EasingControl.cs" />
      <Compile Include="Assets\Scripts\View Model Component\Features\AddPoisonStatusFeature.cs" />
      <Compile Include="Assets\Scripts\Enums\Locomotions.cs" />
+     <Compile Include="Assets\MoveEffect.cs" />
      <Compile Include="Assets\Scripts\Controller\Victory Conditions\DefeatTargetVictoryCondition.cs" />
      <Compile Include="Assets\Scripts\View Model Component\Actor\Undead.cs" />
      <Compile Include="Assets\Scripts\Common\Animation\TransformLocalPositionTweener.cs" />
@@ -204,6 +205,7 @@
      <Compile Include="Assets\Scripts\Controller\Battle States\ActionSelectionState.cs" />
      <Compile Include="Assets\Scripts\View Model Component\Features\StatModifierFeature.cs" />
      <Compile Include="Assets\Scripts\Common\UI\Panel.cs" />
+     <Compile Include="Assets\DamageTextScript.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -218,6 +220,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Audio\Sound Effcets\Helton Yan&apos;s Old-School Shonen SFX\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
